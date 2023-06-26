@@ -2,12 +2,10 @@ let city = "herblay";
 
 const cityElement = document.getElementById("city");
 const conditionImg = document.getElementById("conditionImg");
-
 const conditionElement = document.getElementById("condition");
 const temperatureElement = document.getElementById("temperature");
 const windSpeedElement = document.getElementById("windSpeed");
 const humidityElement = document.getElementById("humidity");
-
 const inputCity = document.getElementById("userCity");
 const buttonSearch = document.getElementById("search");
 
@@ -22,6 +20,11 @@ const getData = async (cityParam) => {
     console.log(data);
     cityElement.innerText = data.city_info.name;
     conditionImg.src = data.current_condition.icon;
+    conditionElement.innerText = data.current_condition.condition;
+    temperatureElement.innerText = data.current_condition.tmp;
+    windSpeedElement.innerText = data.current_condition.condition;
+    humidityElement.innerText = data.current_condition.condition;
+
 
     for (let index = 1; index < 5; index++) {
       const previsionWeek = data[`fcst_day_${index}`];
